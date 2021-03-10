@@ -1,0 +1,187 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The taskplanning API reference &#8212; RWA1 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to RWA1’s documentation!" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to RWA1’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RWA1 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">The taskplanning API reference</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-taskplanning-api-reference">
+<h1>The taskplanning API reference<a class="headerlink" href="#the-taskplanning-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="plan">
+<h2>plan()<a class="headerlink" href="#plan" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plan</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is the main function.</span>
+<span class="sd">    This function will get the user input for number of parts in bins , kit tray and required parts in kit tray</span>
+<span class="sd">     It also initializes all the flags and checks all the preconditions</span>
+<span class="sd">    :return: Generated path or terminates the process if any invalid input given</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mov-to-bin-location-n">
+<h2>mov_to_bin(location_n)<a class="headerlink" href="#mov-to-bin-location-n" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mov_to_bin</span><span class="p">(</span><span class="n">location_n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function will move the robot to the bins location</span>
+<span class="sd">    :return: Change the location of the robot</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pick-gripper-n-part-bins-n-j-n-single-n">
+<h2>pick(gripper_n, part_bins_n, j_n, single_n)<a class="headerlink" href="#pick-gripper-n-part-bins-n-j-n-single-n" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="mov-to-tray-location-n">
+<h2>mov_to_tray(location_n)<a class="headerlink" href="#mov-to-tray-location-n" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mov_to_tray</span><span class="p">(</span><span class="n">location_n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function will move the robot to tray location</span>
+<span class="sd">    :return: Change the location of the robot</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="place-gripper-n-current-tray-n-j-n-single-n">
+<h2>place(gripper_n, current_tray_n, j_n, single_n)<a class="headerlink" href="#place-gripper-n-current-tray-n-j-n-single-n" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">place</span><span class="p">(</span><span class="n">gripper_n</span><span class="p">,</span> <span class="n">current_tray_n</span><span class="p">,</span> <span class="n">j_n</span><span class="p">,</span> <span class="n">single_n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function will place the parts from grippers into the kit tray</span>
+<span class="sd">    :param gripper_n: After placing parts the gripper flags will turn false</span>
+<span class="sd">    :param current_tray: After placing parts the number of parts in tray will be increased</span>
+<span class="sd">    :param j_n: It denotes which colored part is robot holding, either red, green or blue</span>
+<span class="sd">    :param single: It denotes whether the robot is holding one part or two parts</span>
+<span class="sd">    :return: Changes the flags and makes changes in the kit tray accordingly</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-max-part-bins-n">
+<h2>check_max(part_bins_n)<a class="headerlink" href="#check-max-part-bins-n" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_max</span><span class="p">(</span><span class="n">part_bins_n</span><span class="p">):</span>
+    <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    This function will check if the number of parts in any of the bins is greater than 10 or not.</span>
+<span class="s2">    :return: Changes the flag</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-taskexecution-api-reference">
+<h1>The taskexecution API reference<a class="headerlink" href="#the-taskexecution-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="execution-file">
+<h2>Execution file<a class="headerlink" href="#execution-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing the file with all the functions</span>
+<span class="kn">from</span> <span class="nn">rwa1</span> <span class="kn">import</span> <span class="n">taskplanning</span> <span class="k">as</span> <span class="n">tp</span>
+
+<span class="c1"># Calling the final function</span>
+<span class="n">tp</span><span class="o">.</span><span class="n">plan</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The taskplanning API reference</a><ul>
+<li><a class="reference internal" href="#plan">plan()</a></li>
+<li><a class="reference internal" href="#mov-to-bin-location-n">mov_to_bin(location_n)</a></li>
+<li><a class="reference internal" href="#pick-gripper-n-part-bins-n-j-n-single-n">pick(gripper_n, part_bins_n, j_n, single_n)</a></li>
+<li><a class="reference internal" href="#mov-to-tray-location-n">mov_to_tray(location_n)</a></li>
+<li><a class="reference internal" href="#place-gripper-n-current-tray-n-j-n-single-n">place(gripper_n, current_tray_n, j_n, single_n)</a></li>
+<li><a class="reference internal" href="#check-max-part-bins-n">check_max(part_bins_n)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-taskexecution-api-reference">The taskexecution API reference</a><ul>
+<li><a class="reference internal" href="#execution-file">Execution file</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to RWA1’s documentation!</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to RWA1’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RWA1 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">The taskplanning API reference</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Patel Dhyey.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>
