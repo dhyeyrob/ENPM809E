@@ -3,7 +3,7 @@
 * In this project we have to execute task planning for a dual arm gantry robot to execute a manufacturing task of kitting.The robot has two suction grippers on left and right arm respectively.
 * The robot is tasked to pick parts from bins and place them in the kit tray.
 ## Files
-* In the zip folder there is one RWA1 package which consists of two python files, one is the README file and one is the documentation file. The python files inside the RWA1 package are as follows:
+* In the zip folder there is one RWA1 package which consists of python file, one is the README file and all other are supporting files for the documentatio file. The python files are as follows:
 * taskplanning.py
 * taskexecution.py
 ## Libraries Required
